@@ -12,6 +12,7 @@ import {
 import Footer from "@/components/footer";
 import ResearchSpotlight from "@/components/research";
 import KiitProgram from "@/components/program";
+import PlacementHighlights from "@/components/placement";
 
 export default function Home() {
   return (
@@ -104,7 +105,7 @@ export default function Home() {
       <KiitProgram />
       <RankingSection />
       <ResearchSpotlight />
-
+      <PlacementHighlights />
       <Footer />
     </main>
   );

@@ -45,37 +45,35 @@ const RankingSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {rankingsData.map((rank, index) => (
-          <div key={index} className="bg-white shadow-md rounded-lg p-6">
+          <div
+            key={index}
+            className="rounded-lg p-6 border border-gray-200"
+            style={{
+              backgroundImage: `url(${tempImage.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              minHeight: "300px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              color: "white",
+              textShadow: "2px 2px 4px #000000",
+            }}
+          >
             <div className="space-y-4">
-              <Image
-                src={tempImage}
-                alt={rank.title}
-                width={120}
-                height={60}
-                className="mb-2"
-              />
-              <h3 className="text-lg font-bold">{rank.title}</h3>
-              <p className="text-sm text-gray-600">{rank.description}</p>
+              <h3 className="text-xl font-bold">{rank.title}</h3>
+              <p className="text-md">{rank.description}</p>
 
               {rank.extra && (
                 <>
-                  <Image
-                    src={tempImage}
-                    alt={rank.extra}
-                    width={80}
-                    height={40}
-                    className="mt-4"
-                  />
-                  <h4 className="text-md font-semibold mt-2">{rank.extra}</h4>
-                  <p className="text-sm text-gray-600">
-                    {rank.extraDescription}
-                  </p>
+                  <h4 className="text-lg font-semibold">{rank.extra}</h4>
+                  <p className="text-md">{rank.extraDescription}</p>
                 </>
               )}
 
               {rank.extraRankings &&
                 rank.extraRankings.map((extraRank, i) => (
-                  <p key={i} className="text-sm text-gray-600">
+                  <p key={i} className="text-md">
                     {extraRank}
                   </p>
                 ))}
